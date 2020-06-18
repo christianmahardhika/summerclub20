@@ -12,6 +12,7 @@ func main() {
 	models.ConnectDatabase()
 
 	router.POST("/api/car/create", controllers.CreateCar)
+	router.GET("/api/car/list", controllers.FindCars)
 
 	router.Run()
 }

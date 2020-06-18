@@ -26,3 +26,10 @@ func CreateCar(context *gin.Context) {
 
 	context.JSON(201, gin.H{"success": true, "result": car, "errorMessage": nil})
 }
+
+func FindCars(context *gin.Context) {
+	var cars []models.Car
+	models.DB.Find(&cars)
+
+	context.JSON(200, gin.H{"success": true, "result": cars, "errorMessage": nil})
+}
